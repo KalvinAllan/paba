@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
         Login.setOnClickListener {
-            val intent = Intent(this@MainActivity, LogIn:: class.java)
+            val intent = Intent(this@MainActivity, Home:: class.java)
             startActivity(intent)
         }
     }
