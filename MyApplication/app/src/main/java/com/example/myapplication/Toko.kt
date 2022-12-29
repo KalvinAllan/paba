@@ -22,6 +22,7 @@ class Toko : AppCompatActivity() {
         val stock = findViewById<EditText>(R.id.JumlahStock)
         val harga = findViewById<EditText>(R.id.Harga)
         val update = findViewById<Button>(R.id.update)
+        val Alist =ArrayList<Long>()
         val sharedPref =  getSharedPreferences("LoginPenjual", Context.MODE_PRIVATE)
         val text = sharedPref.getString("username", "")
         val textpass= sharedPref.getString("password", "")
@@ -54,7 +55,7 @@ class Toko : AppCompatActivity() {
                             Log.d("Test", h2.toString())
                             Log.d("Test", h1.toString())
                             val dataInput =
-                                DataSeller(text.toString(), textpass.toString(), 0.0, h2, h1)
+                                DataSeller(text.toString(), textpass.toString(), 0.0, h2, h1,Alist)
                             db.collection("Seller").document(text.toString()).set(dataInput)
                             val intents = Intent(this@Toko, MainActivity2::class.java)
                             startActivity(intents)

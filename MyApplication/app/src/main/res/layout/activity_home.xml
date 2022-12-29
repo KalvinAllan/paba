@@ -4,37 +4,49 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/img"
     tools:context=".MainActivity2">
 
     <Button
         android:id="@+id/Buy"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="148dp"
-        android:text="Pembeli"
+        android:layout_width="250dp"
+        android:layout_height="90dp"
+        android:textAllCaps="false"
+        android:textSize="20sp"
+        android:background="@drawable/button"
+        android:text="Login Sebagai Pembeli"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="148dp"
+        />
 
     <Button
         android:id="@+id/SellerUp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:layout_marginTop="520dp"
-        android:text="Daftar Penjual"
+        android:text="Daftar Sebagai Penjual"
+        android:background="@drawable/button"
+        android:layout_width="250dp"
+        android:layout_height="90dp"
+        android:textSize="20sp"
+        android:textAllCaps="false"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        />
 
     <Button
         android:id="@+id/SellerIn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="392dp"
+        android:layout_width="250dp"
+        android:layout_height="90dp"
+        android:layout_marginTop="332dp"
+        android:background="@drawable/button"
+        android:textAllCaps="false"
+        android:textSize="20sp"
         android:text="Login Penjual"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.533"
+        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

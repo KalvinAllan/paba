@@ -3,9 +3,13 @@ package com.example.myapplication
 
 import ReV.AdapterToko
 import ReV.DataToko
+import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.EditText
+import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.firestore.ktx.firestore
@@ -47,11 +51,16 @@ class Home : AppCompatActivity() {
                 hargabarang=dataharga.toTypedArray()
                 ratingtoko=rating.toTypedArray()
 //                Recv.adapter= AdapterToko(artoko)
+
                 Log.d("nama", artoko.toString())
                 Log.d("nama","100")
                 Log.d("nama", artoko.toString())
                 Recv.layoutManager =LinearLayoutManager(this)
                 Recv.adapter= AdapterToko(artoko)
+                fun  pindah(pos:Int){
+                    val intent = Intent(this@Home,OrderPage::class.java)
+                    startActivity(intent)
+                }
 //                Recv.adapter?.notifyDataSetChanged()
             }
 
@@ -73,23 +82,22 @@ class Home : AppCompatActivity() {
 //        Recv.layoutManager =LinearLayoutManager(this)
 //        Recv.adapter= AdapterToko(artoko)
 //    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home2)
+        val sharedPref =  getSharedPreferences("LogIn", Context.MODE_PRIVATE)
+        val text = sharedPref.getString("usernameP", "")
+        Log.d("Ne",text.toString())
+        val nama = findViewById<TextView>(R.id.NamaU)
         Recv=findViewById<RecyclerView>(R.id.RV)
-        Recv.setOnClickListener {
-
+        nama.setText(text.toString())
+        nama.setOnClickListener {
+            val intents = Intent(this@Home, editprofile::class.java)
+            startActivity(intents)
         }
-//        var data = mutableListOf<String>()
-//        val db = Firebase.firestore
-//        db.collection("Seller")
-//            .get()
-//            .addOnSuccessListener{result ->
-//                for (document in result){
-//                    data.add(document.id)
-//                }
         SiapkanData()
-//        TampilkanData()
 
             }
 

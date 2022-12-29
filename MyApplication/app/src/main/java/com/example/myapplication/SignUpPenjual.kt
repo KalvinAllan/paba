@@ -23,12 +23,13 @@ class SignUpPenjual : AppCompatActivity() {
         val Nu = findViewById<EditText>(R.id.NamaUser)
         val PU = findViewById<EditText>(R.id.PasswordUser)
         val sharedPref = this.getPreferences(Context.MODE_PRIVATE)
+        val AList=ArrayList<Long>()
 
         Regist.setOnClickListener {
             val retrieveData = db.collection("User")
                 .get()
                 .addOnSuccessListener { result->
-                    val dataInput = DataSeller(Nama.text.toString(), Password.text.toString(),0.0,0,0)
+                    val dataInput = DataSeller(Nama.text.toString(), Password.text.toString(),0.0,0,0,AList)
                     db.collection("Seller").document(Nama.text.toString()).set(dataInput)
                     val intents = Intent(this@SignUpPenjual, LoginPenjual::class.java)
                     startActivity(intents)

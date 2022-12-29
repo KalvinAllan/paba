@@ -21,7 +21,7 @@ class SignUp : AppCompatActivity() {
         val Array= arrayListOf<Int>()
 
         sp.setOnClickListener {
-            val dataInput = Data(Nama.text.toString(), Pass.text.toString(),0,Array)
+            val dataInput = Data(Nama.text.toString(), Pass.text.toString(),Array)
             db.collection("User").document(Nama.text.toString()).set(dataInput)
             val intents = Intent(this@SignUp, MainActivity::class.java)
             startActivity(intents)

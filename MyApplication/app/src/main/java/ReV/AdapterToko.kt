@@ -11,6 +11,7 @@ import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.MainActivity
 import com.example.myapplication.MainActivity2
+import com.example.myapplication.OrderPage
 import com.example.myapplication.R
 
 class AdapterToko (
@@ -18,8 +19,10 @@ class AdapterToko (
         )  :RecyclerView.Adapter<AdapterToko.ListViewHolder>()
 
 {
-inner class ListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
 
+
+inner class ListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
+    var V : View =itemView
     var namatoko : TextView =itemView.findViewById(R.id.NamaToko)
     var hargabarang :TextView =itemView.findViewById(R.id.HargaBarang)
     var stockbarang: TextView  = itemView.findViewById(R.id.StockBarang)
@@ -34,6 +37,7 @@ inner class ListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
         return ListViewHolder(view)
     }
 
+
     override fun onBindViewHolder(holder: ListViewHolder, position: Int) {
         var toko  =listresult[position]
         Log.d("Mana",listresult.toString())
@@ -46,9 +50,12 @@ inner class ListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
         holder.rating.setText(toko.Rating.toString())
         holder.order.setOnClickListener {
 
+            val a = Intent(holder.V.context,OrderPage::class.java)
+            a.putExtra("namatoko",toko.Nama)
+            holder.V.context.startActivity(a)
+
         }
     }
-
 
 
 
