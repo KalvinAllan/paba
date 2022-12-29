@@ -77,7 +77,9 @@ class Home : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home2)
         Recv=findViewById<RecyclerView>(R.id.RV)
+        Recv.setOnClickListener {
 
+        }
 //        var data = mutableListOf<String>()
 //        val db = Firebase.firestore
 //        db.collection("Seller")

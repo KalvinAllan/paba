@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
         Login.setOnClickListener {
-            val intent = Intent(this@MainActivity, Home:: class.java)
+            val intent = Intent(this@MainActivity, OrderPage:: class.java)
             startActivity(intent)
         }
     }

@@ -16,8 +16,10 @@ import com.example.myapplication.R
 class AdapterToko (
     private val listresult :ArrayList<DataToko>
         )  :RecyclerView.Adapter<AdapterToko.ListViewHolder>()
+
 {
 inner class ListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
+
     var namatoko : TextView =itemView.findViewById(R.id.NamaToko)
     var hargabarang :TextView =itemView.findViewById(R.id.HargaBarang)
     var stockbarang: TextView  = itemView.findViewById(R.id.StockBarang)
@@ -42,11 +44,10 @@ inner class ListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
         holder.stockbarang.setText(toko.Stock.toString())
 //        holder.FotoToko.setImageResource(toko.image.toString())
         holder.rating.setText(toko.Rating.toString())
-        holder.rating.setOnClickListener{
-            val intents = Intent(this@AdapterToko, MainActivity::class.java)
-            startActivity(intents)
+        holder.order.setOnClickListener {
+
         }
-    } 
+    }
 
 
 
