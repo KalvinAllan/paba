@@ -18,7 +18,7 @@ class SignUp : AppCompatActivity() {
         val Nama = findViewById<EditText>(R.id.NamaR)
         val Pass = findViewById<EditText>(R.id.PasswordR)
         val sp = findViewById<Button>(R.id.SU)
-        val Array= arrayListOf<Int>()
+        val Array= arrayListOf<Long>()
 
         sp.setOnClickListener {
             val dataInput = Data(Nama.text.toString(), Pass.text.toString(),Array)

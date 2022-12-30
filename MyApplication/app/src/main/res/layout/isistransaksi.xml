@@ -9,10 +9,11 @@
     android:background="@drawable/button">
 
     <Button
-        android:id="@+id/OrderT"
+        android:id="@+id/RateOrder"
         android:layout_width="73dp"
         android:layout_height="29dp"
         android:layout_marginStart="92dp"
+        android:layout_marginBottom="12dp"
         android:background="@drawable/background"
         android:text="Rate Order"
         android:textAllCaps="false"
@@ -20,28 +21,27 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.979"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.862" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/NamaTokoT"
+        android:id="@+id/namaTokoHistory"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="128dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="216dp"
         android:text="NAMA"
-        android:textSize="28dp"
+        android:textColor="@color/black"
+        android:textSize="15sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Id" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/Id"
+        android:id="@+id/isOrderComplete"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:text="id"
+        android:layout_marginStart="212dp"
+        android:text="completed"
+        android:textColor="@color/black"
         app:layout_constraintStart_toEndOf="@+id/imageView"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -49,19 +49,25 @@
         android:id="@+id/Jumlah"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="32dp"
         android:text="Jumlah Barang"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
-        app:layout_constraintTop_toBottomOf="@+id/NamaTokoT" />
+        android:textColor="@color/black"
+        android:textSize="10sp"
+        app:layout_constraintStart_toEndOf="@+id/textView13"
+        app:layout_constraintTop_toBottomOf="@+id/namaTokoHistory" />
 
     <TextView
-        android:id="@id/Harga"
+        android:id="@+id/HargaTransaksi"
         android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="8dp"
+        android:layout_height="match_parent"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="28dp"
         android:text="Harga"
         android:textAlignment="center"
-        android:textSize="20dp"
-        app:layout_constraintStart_toStartOf="@+id/Jumlah"
+        android:textColor="@color/black"
+        android:textSize="10sp"
+        app:layout_constraintStart_toEndOf="@+id/textView14"
         app:layout_constraintTop_toBottomOf="@+id/Jumlah" />
 
     <ImageView
@@ -71,6 +77,39 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:src="@drawable/logo" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nama Toko:"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Jumlah Barang:"
+        android:textColor="@color/black"
+        android:textSize="10sp"
+        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@+id/textView12" />
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="28dp"
+        android:text="Harga barang:"
+        android:textColor="@color/black"
+        android:textSize="10sp"
+        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@+id/textView13" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
