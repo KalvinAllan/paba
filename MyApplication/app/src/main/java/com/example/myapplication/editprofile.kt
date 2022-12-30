@@ -1,6 +1,7 @@
 package com.example.myapplication
 
 import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -19,13 +20,23 @@ class editprofile : AppCompatActivity() {
         val EChange= findViewById<Button>(R.id.Change)
         val sharedPref =  getSharedPreferences("LogIn", Context.MODE_PRIVATE)
         val text = sharedPref.getString("usernameP", "")
+        var transaction= ArrayList<Int>()
         Log.d("Self",text.toString())
         EChange.setOnClickListener {
-            db.collection("User").document(text.toString())
-                .get()
-                .addOnSuccessListener {
-                    
-                }
+            if (ENama.text.toString()==text){
+                db.collection("User")
+                    .get()
+                    .addOnSuccessListener {result->
+                        for (document in result){
+                            transaction= document.get("transaksiid") as ArrayList<Int>
+                        }
+                        val datainput =Data(ENama.text.toString(),EPass.text.toString(),transaction)
+                        db.collection("User").document(ENama.text.toString()).set(datainput)
+                        val intent =Intent(this@editprofile,editprofile::class.java)
+                        startActivity(intent)
+                    }
+            }
+
 
         }
     }
