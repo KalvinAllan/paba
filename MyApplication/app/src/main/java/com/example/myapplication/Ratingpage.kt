@@ -28,6 +28,9 @@ class Ratingpage : AppCompatActivity() {
         var ratings=0.0
         var stocks=0
         var hargas=0
+        var Rater= ArrayList<String>()
+        var komentar=ArrayList<String>()
+        var value =ArrayList<Int>()
         var transaksis=ArrayList<Long>()
         val db = Firebase.firestore
         val rater=ArrayList<String>()

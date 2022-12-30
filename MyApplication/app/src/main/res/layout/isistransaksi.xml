@@ -9,7 +9,7 @@
     android:background="@drawable/button">
 
     <Button
-        android:id="@+id/Order"
+        android:id="@+id/OrderT"
         android:layout_width="73dp"
         android:layout_height="29dp"
         android:layout_marginStart="92dp"
@@ -25,7 +25,7 @@
         app:layout_constraintVertical_bias="0.862" />
 
     <TextView
-        android:id="@+id/NamaToko"
+        android:id="@+id/NamaTokoT"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="128dp"
@@ -51,7 +51,7 @@
         android:layout_height="wrap_content"
         android:text="Jumlah Barang"
         app:layout_constraintStart_toEndOf="@+id/imageView"
-        app:layout_constraintTop_toBottomOf="@+id/NamaToko" />
+        app:layout_constraintTop_toBottomOf="@+id/NamaTokoT" />
 
     <TextView
         android:id="@id/Harga"
