@@ -93,8 +93,22 @@ class OrderPage : AppCompatActivity() {
                             val data =transaksiid(count,text.toString(),namaT,hargaT,minus,0)
                             db.collection("transaksiid")
                                 .document(count.toString()).set(data)
-                            val intents = Intent(this@OrderPage, Ratingpage::class.java)
-                            startActivity(intents)
+
+                            val a = db.collection("User").document(text.toString()).get()
+                                .addOnSuccessListener {hasil->
+                                    val nama = hasil.data?.get("nama")
+                                    val pass = hasil.data?.get("pass")
+                                    var transaksiids= hasil.data?.get("transaksiid") as ArrayList<Long>
+                                    if (nama != null && pass != null){
+                                        transaksiids.add(count.toLong())
+                                        val data = Data(nama.toString(), pass.toString(), transaksiids)
+                                        db.collection("User").document(text.toString()).set(data)
+                                        val intents = Intent(this@OrderPage, Transaction::class.java)
+                                        startActivity(intents)
+                                    }
+
+                                }
+
                         }
 
                 }

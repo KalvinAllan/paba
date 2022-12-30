@@ -20,7 +20,7 @@ class editprofile : AppCompatActivity() {
         val EChange= findViewById<Button>(R.id.Change)
         val sharedPref =  getSharedPreferences("LogIn", Context.MODE_PRIVATE)
         val text = sharedPref.getString("usernameP", "")
-        var transaction= ArrayList<Int>()
+        var transaction= ArrayList<Long>()
         Log.d("Self",text.toString())
         EChange.setOnClickListener {
             if (ENama.text.toString()==text){
@@ -28,7 +28,7 @@ class editprofile : AppCompatActivity() {
                     .get()
                     .addOnSuccessListener {result->
                         for (document in result){
-                            transaction= document.get("transaksiid") as ArrayList<Int>
+                            transaction= document.get("transaksiid") as ArrayList<Long>
                         }
                         val datainput =Data(ENama.text.toString(),EPass.text.toString(),transaction)
                         db.collection("User").document(ENama.text.toString()).set(datainput)

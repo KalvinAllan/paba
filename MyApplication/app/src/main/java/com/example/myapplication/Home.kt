@@ -8,7 +8,9 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -90,6 +92,13 @@ class Home : AppCompatActivity() {
         val sharedPref =  getSharedPreferences("LogIn", Context.MODE_PRIVATE)
         val text = sharedPref.getString("usernameP", "")
         Log.d("Ne",text.toString())
+        val buttonHistory = findViewById<ImageView>(R.id.HistoryButtonSSSS)
+
+        buttonHistory.setOnClickListener{
+            val intents = Intent(this@Home, Transaction::class.java)
+            startActivity(intents)
+        }
+
         val nama = findViewById<TextView>(R.id.NamaU)
         Recv=findViewById<RecyclerView>(R.id.RV)
         nama.setText(text.toString())

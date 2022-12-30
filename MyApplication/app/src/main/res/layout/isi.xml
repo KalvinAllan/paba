@@ -54,7 +54,7 @@
         app:layout_constraintTop_toBottomOf="@+id/StockBarang" />
 
     <TextView
-        android:id="@+id/Rating"
+        android:id="@+id/HargaBarangs"
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_marginStart="164dp"
@@ -80,7 +80,7 @@
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toStartOf="@+id/Rating"
+        app:layout_constraintEnd_toStartOf="@+id/HargaBarangs"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_baseline_star_rate_24" />
 

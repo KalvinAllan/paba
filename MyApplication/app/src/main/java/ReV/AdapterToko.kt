@@ -1,16 +1,12 @@
 package ReV
 
-import android.content.ComponentCallbacks
 import android.content.Intent
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
-import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
-import com.example.myapplication.MainActivity
-import com.example.myapplication.MainActivity2
 import com.example.myapplication.OrderPage
 import com.example.myapplication.R
 
@@ -27,7 +23,7 @@ inner class ListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
     var hargabarang :TextView =itemView.findViewById(R.id.HargaBarang)
     var stockbarang: TextView  = itemView.findViewById(R.id.StockBarang)
     var FotoToko : ImageView= itemView.findViewById(R.id.imageView)
-    var rating : TextView=itemView.findViewById(R.id.Rating)
+    var rating : TextView=itemView.findViewById(R.id.HargaBarangs)
     var order : Button=itemView.findViewById(R.id.Order)
 }
 

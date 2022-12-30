@@ -21,8 +21,9 @@ class Toko : AppCompatActivity() {
 
         val nama = findViewById<TextView>(R.id.textView)
         val stock = findViewById<EditText>(R.id.JumlahStock)
-        val harga = findViewById<EditText>(R.id.Harga)
+        val harga = findViewById<EditText>(R.id.HargaTransaksi)
         val update = findViewById<Button>(R.id.update)
+        val listTransaksi = findViewById<Button>(R.id.ListTransaksi)
         val Alist =ArrayList<Long>()
         val sharedPref =  getSharedPreferences("LoginPenjual", Context.MODE_PRIVATE)
         val text = sharedPref.getString("username", "")
@@ -41,7 +42,10 @@ class Toko : AppCompatActivity() {
         }
 
 
-
+        listTransaksi.setOnClickListener {
+            val intents = Intent(this@Toko, CompleteTransaction::class.java)
+            startActivity(intents)
+        }
         update.setOnClickListener {
             Log.d("Test",text.toString())
             val h1=harga.text.toString().toInt()
