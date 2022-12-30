@@ -55,13 +55,15 @@
 
     <TextView
         android:id="@+id/Rating"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
         android:layout_marginStart="164dp"
         android:layout_marginTop="16dp"
-        android:text="Hobby"
+        android:textSize="20dp"
+        android:text="0.0"
+        android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.176"
+        app:layout_constraintHorizontal_bias="0.644"
         app:layout_constraintStart_toStartOf="@+id/NamaToko"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -71,7 +73,16 @@
         android:layout_height="138dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/avatars" />
+        android:src="@drawable/logo" />
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toStartOf="@+id/Rating"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_baseline_star_rate_24" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

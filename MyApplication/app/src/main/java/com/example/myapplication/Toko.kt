@@ -10,6 +10,7 @@ import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 
@@ -49,21 +50,26 @@ class Toko : AppCompatActivity() {
                 .get()
                 .addOnSuccessListener { result ->
                     Log.d("Test", text.toString())
-                    for (document in result) {
-                        Log.d("Test", text.toString())
-                        if (text == document.data.get("nama")) {
-                            Log.d("Test", h2.toString())
-                            Log.d("Test", h1.toString())
-                            val dataInput =
-                                DataSeller(text.toString(), textpass.toString(), 0.0, h2, h1,Alist)
-                            db.collection("Seller").document(text.toString()).set(dataInput)
-                            val intents = Intent(this@Toko, MainActivity2::class.java)
-                            startActivity(intents)
-                        } else {
-                            Log.d("Nama", "Salah ")
-                        }
+                    if(h2>0 && h1>0){
+                        for (document in result) {
+                            Log.d("Test", text.toString())
+                            if (text == document.data.get("nama")) {
+                                Log.d("Test", h2.toString())
+                                Log.d("Test", h1.toString())
+                                val dataInput =
+                                    DataSeller(text.toString(), textpass.toString(), 0.0, h2, h1,Alist)
+                                db.collection("Seller").document(text.toString()).set(dataInput)
+                                val intents = Intent(this@Toko, MainActivity2::class.java)
+                                startActivity(intents)
+                            } else {
 
+                            }
+                        }
+                    }else{
+                        Toast.makeText(this@Toko,"Input Stock / Harga Terlalu Kecil",
+                            Toast.LENGTH_LONG).show()
                     }
+
                 }
         }
 

@@ -21,8 +21,11 @@ class editprofile : AppCompatActivity() {
         val text = sharedPref.getString("usernameP", "")
         Log.d("Self",text.toString())
         EChange.setOnClickListener {
-
-            db.collection("User").document(text.toString()).set(ENama.text.toString())
+            db.collection("User").document(text.toString())
+                .get()
+                .addOnSuccessListener {
+                    
+                }
 
         }
     }

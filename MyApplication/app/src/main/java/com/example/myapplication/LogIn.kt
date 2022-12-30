@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import kotlinx.coroutines.CoroutineScope
@@ -35,7 +36,6 @@ class LogIn : AppCompatActivity() {
                                     Log.d("Nama", "2")
                                     with(sharedPref.edit()) {
                                         putString("usernameP", nama.text.toString())
-
                                         apply()
                                         val intent = Intent(this@LogIn,MainActivity2::class.java)
                                         startActivity(intent)
