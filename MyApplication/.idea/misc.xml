@@ -20,6 +20,7 @@
         <entry key="..\:/Users/conqu/Documents/GitHub/paba/MyApplication/app/src/main/res/drawable/ic_baseline_star_rate_24.xml" value="0.2255" />
         <entry key="..\:/Users/conqu/Documents/GitHub/paba/MyApplication/app/src/main/res/drawable/ic_launcher_background.xml" value="0.124" />
         <entry key="..\:/Users/conqu/Documents/GitHub/paba/MyApplication/app/src/main/res/drawable/star.xml" value="0.2255" />
+        <entry key="..\:/Users/conqu/Documents/GitHub/paba/MyApplication/app/src/main/res/layout/activity_complete_transaction.xml" value="0.10208333333333333" />
         <entry key="..\:/Users/conqu/Documents/GitHub/paba/MyApplication/app/src/main/res/layout/activity_editprofile.xml" value="0.4" />
         <entry key="..\:/Users/conqu/Documents/GitHub/paba/MyApplication/app/src/main/res/layout/activity_home.xml" value="0.264" />
         <entry key="..\:/Users/conqu/Documents/GitHub/paba/MyApplication/app/src/main/res/layout/activity_home2.xml" value="0.264" />
@@ -35,6 +36,7 @@
         <entry key="..\:/Users/conqu/Documents/GitHub/paba/MyApplication/app/src/main/res/layout/activity_transaksi_page.xml" value="0.22644927536231885" />
         <entry key="..\:/Users/conqu/Documents/GitHub/paba/MyApplication/app/src/main/res/layout/isi.xml" value="0.4" />
         <entry key="..\:/Users/conqu/Documents/GitHub/paba/MyApplication/app/src/main/res/layout/isistransaksi.xml" value="0.4" />
+        <entry key="..\:/Users/conqu/Documents/GitHub/paba/MyApplication/app/src/main/res/layout/transeller.xml" value="0.4" />
       </map>
     </option>
   </component>
