@@ -93,7 +93,7 @@ class OrderPage : AppCompatActivity() {
                             val data =transaksiid(count,text.toString(),namaT,hargaT,minus,0)
                             db.collection("transaksiid")
                                 .document(count.toString()).set(data)
-                            val intents = Intent(this@OrderPage, Transaction::class.java)
+                            val intents = Intent(this@OrderPage, Ratingpage::class.java)
                             startActivity(intents)
                         }
 
