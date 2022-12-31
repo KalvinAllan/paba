@@ -29,7 +29,7 @@ class SignUpPenjual : AppCompatActivity() {
             val retrieveData = db.collection("User")
                 .get()
                 .addOnSuccessListener { result->
-                    val dataInput = DataSeller(Nama.text.toString(), Password.text.toString(),0.0,0,0,AList)
+                    val dataInput = DataSeller(Nama.text.toString(), Password.text.toString(),0.0,0,0,AList, 0)
                     db.collection("Seller").document(Nama.text.toString()).set(dataInput)
                     val intents = Intent(this@SignUpPenjual, LoginPenjual::class.java)
                     startActivity(intents)

@@ -9,6 +9,7 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.myapplication.DataSeller
 import com.example.myapplication.R
 import com.example.myapplication.Transaction
 import com.example.myapplication.transaksiid
@@ -63,15 +64,35 @@ class adapterCompleteTransaksi (
 //            holder.V.context.startActivity(a)
             val a = db.collection("transaksiid").document(transaksi.id.toString()).get()
                 .addOnSuccessListener { result ->
-                    val data = transaksiid(
-                        result.id.toInt(),
-                        result.data?.get("namaP").toString(),
-                        result.data?.get("nama").toString(),
-                        result.data?.get("harga").toString().toInt(),
-                        result.data?.get("jumlahbarang").toString().toInt(),
-                        1
-                    )
-                    db.collection("transaksiid").document(transaksi.id.toString()).set(data)
+//                    val jumlahbarang = result.data?.get("jumlahbarang").toString().toInt()
+
+                    db.collection("Seller").document(result.data?.get("nama").toString())
+                        .get()
+                        .addOnSuccessListener {resSeller->
+                            var CurStockOrder = resSeller.data?.get("stockOrder").toString().toInt() - result.data?.get("jumlahbarang").toString().toInt()
+                            var datas = DataSeller(
+                                resSeller.data?.get("nama").toString(),
+                                resSeller.data?.get("pass").toString(),
+                                resSeller.data?.get("rating").toString().toDouble(),
+                                resSeller.data?.get("stock").toString().toInt(),
+                                resSeller.data?.get("harga").toString().toInt(),
+                                resSeller.data?.get("transaksi") as ArrayList<Long>,
+                                CurStockOrder)
+                            db.collection("Seller").document(resSeller.id).set(datas)
+                            val data = transaksiid(
+                                result.id.toInt(),
+                                result.data?.get("namaP").toString(),
+                                result.data?.get("nama").toString(),
+                                result.data?.get("harga").toString().toInt(),
+                                result.data?.get("jumlahbarang").toString().toInt(),
+                                1
+                            )
+                            db.collection("transaksiid").document(transaksi.id.toString()).set(data)
+
+                        }
+                    holder.status.text = "Completed"
+                    holder.CompleteOrder.isEnabled = false
+
                 }
         }
     }

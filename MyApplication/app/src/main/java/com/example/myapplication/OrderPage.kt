@@ -61,6 +61,12 @@ class OrderPage : AppCompatActivity() {
                             harga.setText(hargaT.toString())
                             stock.setText(StockO.toString())
                             rating.setText(ratingT.toString())
+
+                            rating.setOnClickListener {
+                                val a = Intent(this@OrderPage, ViewRating::class.java)
+                                a.putExtra("namatoko",namaT)
+                                startActivity(a)
+                            }
                         }
                     }
                 }
@@ -88,24 +94,30 @@ class OrderPage : AppCompatActivity() {
                                 count+=1
                             }
                             TransaksiPenjual.add(count.toLong())
-                         val dataInput = DataSeller(namaT,pass,ratingT,stockN,hargaT,TransaksiPenjual)
-                         db.collection("Seller").document(namaT).set(dataInput)
-                            val data =transaksiid(count,text.toString(),namaT,hargaT,minus,0)
-                            db.collection("transaksiid")
-                                .document(count.toString()).set(data)
+                            db.collection("Seller").document(namaT)
+                                .get()
+                                .addOnSuccessListener {resSeller->
+                                    var stockOrder = resSeller.data?.get("stockOrder").toString().toInt() + minus
+                                    val dataInput = DataSeller(namaT,pass,ratingT,stockN,hargaT,TransaksiPenjual, stockOrder)
+                                    db.collection("Seller").document(namaT).set(dataInput)
+                                    val data =transaksiid(count,text.toString(),namaT,hargaT,minus,0)
+                                    db.collection("transaksiid")
+                                        .document(count.toString()).set(data)
 
-                            val a = db.collection("User").document(text.toString()).get()
-                                .addOnSuccessListener {hasil->
-                                    val nama = hasil.data?.get("nama")
-                                    val pass = hasil.data?.get("pass")
-                                    var transaksiids= hasil.data?.get("transaksiid") as ArrayList<Long>
-                                    if (nama != null && pass != null){
-                                        transaksiids.add(count.toLong())
-                                        val data = Data(nama.toString(), pass.toString(), transaksiids)
-                                        db.collection("User").document(text.toString()).set(data)
-                                        val intents = Intent(this@OrderPage, Transaction::class.java)
-                                        startActivity(intents)
-                                    }
+                                    val a = db.collection("User").document(text.toString()).get()
+                                        .addOnSuccessListener {hasil->
+                                            val nama = hasil.data?.get("nama")
+                                            val pass = hasil.data?.get("pass")
+                                            var transaksiids= hasil.data?.get("transaksiid") as ArrayList<Long>
+                                            if (nama != null && pass != null){
+                                                transaksiids.add(count.toLong())
+                                                val data = Data(nama.toString(), pass.toString(), transaksiids)
+                                                db.collection("User").document(text.toString()).set(data)
+                                                val intents = Intent(this@OrderPage, Transaction::class.java)
+                                                startActivity(intents)
+                                            }
+
+                                        }
 
                                 }
 

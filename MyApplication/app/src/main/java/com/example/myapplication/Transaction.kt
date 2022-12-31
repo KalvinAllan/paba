@@ -21,11 +21,6 @@ class Transaction : AppCompatActivity() {
 
     private fun SiapkanData(){
         val db = Firebase.firestore
-
-        var datanama = mutableListOf<String>()
-        var datastock  = mutableListOf<Int>()
-        var dataharga  = mutableListOf<Int>()
-        var rating = mutableListOf<Double>()
         val sharedPref =  getSharedPreferences("LogIn", Context.MODE_PRIVATE)
         val text = sharedPref.getString("usernameP", "")
         if (text != null) {

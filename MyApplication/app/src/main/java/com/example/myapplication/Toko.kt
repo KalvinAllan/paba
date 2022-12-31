@@ -61,7 +61,7 @@ class Toko : AppCompatActivity() {
                                 Log.d("Test", h2.toString())
                                 Log.d("Test", h1.toString())
                                 val dataInput =
-                                    DataSeller(text.toString(), textpass.toString(), 0.0, h2, h1,Alist)
+                                    DataSeller(text.toString(), textpass.toString(), 0.0, h2, h1,Alist,0)
                                 db.collection("Seller").document(text.toString()).set(dataInput)
                                 val intents = Intent(this@Toko, MainActivity2::class.java)
                                 startActivity(intents)

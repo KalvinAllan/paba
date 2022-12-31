@@ -4,13 +4,17 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Android/Project PABA/1/paba/MyApplication/app/src/main/res/drawable/ic_baseline_history_24.xml" value="0.137" />
-        <entry key="..\:/Android/Project PABA/1/paba/MyApplication/app/src/main/res/layout/activity_complete_transaction.xml" value="0.1265625" />
+        <entry key="..\:/Android/Project PABA/1/paba/MyApplication/app/src/main/res/layout/activity_complete_transaction.xml" value="0.264" />
         <entry key="..\:/Android/Project PABA/1/paba/MyApplication/app/src/main/res/layout/activity_home.xml" value="0.1265625" />
-        <entry key="..\:/Android/Project PABA/1/paba/MyApplication/app/src/main/res/layout/activity_home2.xml" value="0.6" />
+        <entry key="..\:/Android/Project PABA/1/paba/MyApplication/app/src/main/res/layout/activity_home2.xml" value="0.152" />
+        <entry key="..\:/Android/Project PABA/1/paba/MyApplication/app/src/main/res/layout/activity_login_penjual.xml" value="0.176" />
+        <entry key="..\:/Android/Project PABA/1/paba/MyApplication/app/src/main/res/layout/activity_order_page.xml" value="0.22826086956521738" />
         <entry key="..\:/Android/Project PABA/1/paba/MyApplication/app/src/main/res/layout/activity_toko.xml" value="0.2" />
         <entry key="..\:/Android/Project PABA/1/paba/MyApplication/app/src/main/res/layout/activity_transaction.xml" value="0.1" />
-        <entry key="..\:/Android/Project PABA/1/paba/MyApplication/app/src/main/res/layout/isistransaksi.xml" value="0.4" />
+        <entry key="..\:/Android/Project PABA/1/paba/MyApplication/app/src/main/res/layout/activity_view_rating.xml" value="0.136" />
+        <entry key="..\:/Android/Project PABA/1/paba/MyApplication/app/src/main/res/layout/isistransaksi.xml" value="0.536" />
         <entry key="..\:/Android/Project PABA/1/paba/MyApplication/app/src/main/res/layout/transeller.xml" value="0.536" />
+        <entry key="..\:/Android/Project PABA/1/paba/MyApplication/app/src/main/res/layout/viewratinglayout.xml" value="0.536" />
         <entry key="..\:/Users/conqu/AndroidStudioProjects/MyApplication/app/src/main/res/layout/activity_home.xml" value="0.176" />
         <entry key="..\:/Users/conqu/AndroidStudioProjects/MyApplication/app/src/main/res/layout/activity_home2.xml" value="0.2" />
         <entry key="..\:/Users/conqu/AndroidStudioProjects/MyApplication/app/src/main/res/layout/activity_log_in.xml" value="0.1" />
@@ -28,7 +32,7 @@
         <entry key="..\:/Users/conqu/Documents/GitHub/paba/MyApplication/app/src/main/res/drawable/ic_baseline_star_rate_24.xml" value="0.2255" />
         <entry key="..\:/Users/conqu/Documents/GitHub/paba/MyApplication/app/src/main/res/drawable/ic_launcher_background.xml" value="0.124" />
         <entry key="..\:/Users/conqu/Documents/GitHub/paba/MyApplication/app/src/main/res/drawable/star.xml" value="0.2255" />
-        <entry key="..\:/Users/conqu/Documents/GitHub/paba/MyApplication/app/src/main/res/layout/activity_complete_transaction.xml" value="0.2" />
+        <entry key="..\:/Users/conqu/Documents/GitHub/paba/MyApplication/app/src/main/res/layout/activity_complete_transaction.xml" value="0.10208333333333333" />
         <entry key="..\:/Users/conqu/Documents/GitHub/paba/MyApplication/app/src/main/res/layout/activity_editprofile.xml" value="0.4" />
         <entry key="..\:/Users/conqu/Documents/GitHub/paba/MyApplication/app/src/main/res/layout/activity_home.xml" value="0.264" />
         <entry key="..\:/Users/conqu/Documents/GitHub/paba/MyApplication/app/src/main/res/layout/activity_home2.xml" value="0.264" />
@@ -42,7 +46,7 @@
         <entry key="..\:/Users/conqu/Documents/GitHub/paba/MyApplication/app/src/main/res/layout/activity_toko.xml" value="0.264" />
         <entry key="..\:/Users/conqu/Documents/GitHub/paba/MyApplication/app/src/main/res/layout/activity_transaction.xml" value="0.22644927536231885" />
         <entry key="..\:/Users/conqu/Documents/GitHub/paba/MyApplication/app/src/main/res/layout/activity_transaksi_page.xml" value="0.22644927536231885" />
-        <entry key="..\:/Users/conqu/Documents/GitHub/paba/MyApplication/app/src/main/res/layout/isi.xml" value="0.264" />
+        <entry key="..\:/Users/conqu/Documents/GitHub/paba/MyApplication/app/src/main/res/layout/isi.xml" value="0.4" />
         <entry key="..\:/Users/conqu/Documents/GitHub/paba/MyApplication/app/src/main/res/layout/isistransaksi.xml" value="0.4" />
         <entry key="..\:/Users/conqu/Documents/GitHub/paba/MyApplication/app/src/main/res/layout/transeller.xml" value="0.4" />
       </map>

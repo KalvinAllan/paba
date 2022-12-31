@@ -18,13 +18,15 @@ class CompleteTransaction : AppCompatActivity() {
 
     private fun SiapkanData(){
         val db = Firebase.firestore
-        val sharedPref =  getSharedPreferences("LogIn", Context.MODE_PRIVATE)
+        val sharedPref =  getSharedPreferences("LoginPenjual", Context.MODE_PRIVATE)
         val text = sharedPref.getString("username", "")
         if (text != null) {
-            db.collection("Seller").document("e")
+            Log.d("Bug", text)
+            db.collection("Seller").document(text)
                 .get()
                 .addOnSuccessListener{result ->
                     var resultArrays = result.data?.get("transaksi") as ArrayList<Long>
+                    Log.d("Bug", resultArrays.toString())
                     for(ids in resultArrays){
                         db.collection("transaksiid").document(ids.toString())
                             .get()

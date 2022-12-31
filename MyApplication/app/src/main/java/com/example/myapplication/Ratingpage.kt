@@ -31,6 +31,7 @@ class Ratingpage : AppCompatActivity() {
         var komentar=ArrayList<String>()
         var value =ArrayList<Long>()
         var transaksis=ArrayList<Long>()
+        var stockOrder=0
         val db = Firebase.firestore
         val text3=intent.getStringExtra("namatoko")
         var count=0
@@ -45,6 +46,7 @@ class Ratingpage : AppCompatActivity() {
                 db.collection("Rating")
                     .get()
                     .addOnSuccessListener { result ->
+                        var booleanss = false
                         for (document in result) {
                             if (text3.toString() == document.id) {
                                 var a = document.data.get("rater") as ArrayList<String>
@@ -60,9 +62,9 @@ class Ratingpage : AppCompatActivity() {
                                 for (x in c) {
                                     value.add(x)
                                 }
-                                Rater.add(count, text.toString())
-                                komentar.add(count, Komentar.text.toString())
-                                value.add(count, rating.text.toString().toLong())
+                                Rater.add(text.toString())
+                                komentar.add(Komentar.text.toString())
+                                value.add(rating.text.toString().toLong())
                                 Log.d("LOLSL", Rater.toString())
                                 Log.d("LOLSL", Rater.size.toString())
                                 Log.d("LOLSL", komentar.toString())
@@ -73,13 +75,22 @@ class Ratingpage : AppCompatActivity() {
                                 Log.d("MIC", "Masuk1")
                                 db.collection("Rating").document(text3.toString()).set(dataInput)
                                 Log.d("LOLSL", "YES")
+                                booleanss = true
                             }
+                        }
+                        if (!booleanss){
+                            Rater.add(text.toString())
+                            komentar.add(Komentar.text.toString())
+                            value.add(rating.text.toString().toLong())
+                            val dataInput = Rating(Rater, value, komentar)
+                            Log.d("MIC", "Masuk1")
+                            db.collection("Rating").document(text3.toString()).set(dataInput)
                         }
                         val retrivedata = db.collection("Seller")
                             .get()
-                            .addOnSuccessListener { result ->
+                            .addOnSuccessListener { res ->
                                 Log.d("LOLSL", "Masuk2")
-                                for (document in result) {
+                                for (document in res) {
                                     if (text3 == document.data.get("nama")) {
                                         Log.d("LOLSL", "Masuk3")
                                         namaS = document.data.get("nama").toString()
@@ -88,6 +99,7 @@ class Ratingpage : AppCompatActivity() {
                                         ratings = document.data.get("rating").toString().toDouble()
                                         stocks = document.data.get("stock").toString().toInt()
                                         transaksis = document.data.get("transaksi") as ArrayList<Long>
+                                        stockOrder = document.data.get("stockOrder").toString().toInt()
                                         var itung=0
                                         var count2=0.0
                                        for (x in value){
@@ -99,7 +111,7 @@ class Ratingpage : AppCompatActivity() {
                                         ratings=count2/itung
                                         Log.d("LOLSL", count.toString())
                                         Log.d("LOLSL", ratings.toString())
-                                        val dataI=DataSeller(namaS,passS,ratings,stocks,hargas,transaksis)
+                                        val dataI=DataSeller(namaS,passS,ratings,stocks,hargas,transaksis, stockOrder)
                                         db.collection("Seller").document(text3.toString()).set(dataI)
                                         val intents = Intent(this@Ratingpage, Home::class.java)
                                         startActivity(intents)

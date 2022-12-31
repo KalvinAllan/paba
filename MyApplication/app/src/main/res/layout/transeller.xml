@@ -10,8 +10,8 @@
 
     <Button
         android:id="@+id/FinishOrder"
-        android:layout_width="73dp"
-        android:layout_height="29dp"
+        android:layout_width="107dp"
+        android:layout_height="28dp"
         android:layout_marginStart="92dp"
         android:background="@drawable/background"
         android:text="Complete Order"
