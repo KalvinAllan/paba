@@ -34,6 +34,7 @@ class OrderPage : AppCompatActivity() {
         var hargatotal=0
         val sharedPref =  getSharedPreferences("LogIn", Context.MODE_PRIVATE)
         val text = sharedPref.getString("usernameP", "")
+        var owner=""
 
         if (dataintent!=null){
             val retrieveData = db.collection("Seller")
@@ -51,6 +52,7 @@ class OrderPage : AppCompatActivity() {
                             ratingT=document.data.get("rating").toString().toDouble()
                             StockO=document.data.get("stock").toString().toInt()
                             TransaksiPenjual= document.data.get("transaksi") as ArrayList<Long>
+                            owner=document.data.get("owner").toString()
                             Log.d("self", TransaksiPenjual.toTypedArray().toString())
                             Log.d("test",pass)
                             Log.d("test",namaT)
@@ -98,7 +100,7 @@ class OrderPage : AppCompatActivity() {
                                 .get()
                                 .addOnSuccessListener {resSeller->
                                     var stockOrder = resSeller.data?.get("stockOrder").toString().toInt() + minus
-                                    val dataInput = DataSeller(namaT,pass,ratingT,stockN,hargaT,TransaksiPenjual, stockOrder)
+                                    val dataInput = DataSeller(namaT,pass,ratingT,stockN,hargaT,TransaksiPenjual, stockOrder,owner)
                                     db.collection("Seller").document(namaT).set(dataInput)
                                     val data =transaksiid(count,text.toString(),namaT,hargaT,minus,0)
                                     db.collection("transaksiid")
@@ -115,6 +117,7 @@ class OrderPage : AppCompatActivity() {
                                                 db.collection("User").document(text.toString()).set(data)
                                                 val intents = Intent(this@OrderPage, Transaction::class.java)
                                                 startActivity(intents)
+                                                finish()
                                             }
 
                                         }

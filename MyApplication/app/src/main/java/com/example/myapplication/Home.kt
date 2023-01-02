@@ -24,26 +24,32 @@ class Home : AppCompatActivity() {
     lateinit var  Recv :RecyclerView
     private var artoko= arrayListOf<DataToko>()
 
+
     private fun SiapkanData(){
         val db = Firebase.firestore
-
+        var  sharedPref =  getSharedPreferences("LogIn", Context.MODE_PRIVATE)
+        val text = sharedPref.getString("usernameP", "")
         var datanama = mutableListOf<String>()
         var datastock  = mutableListOf<Int>()
         var dataharga  = mutableListOf<Int>()
         var rating = mutableListOf<Double>()
+
         db.collection("Seller")
             .get()
             .addOnSuccessListener{result ->
                 for (document in result){
-                    Log.d("TEsting",document.id.toString())
-                    datanama.add(document.id)
+                    Log.d("Feast",text.toString())
+                    if (document.data.get("owner")!=text.toString()){
+                        Log.d("TEsting",document.id.toString())
+                        datanama.add(document.id)
 //                    datastock.add(document.data.get("stock") as Int)
 //                    dataharga.add(document.data.get("harga")as Int)
 //                    rating.add(document.data.get("rating").toString().toDouble())
-                    var data =DataToko(document.id, document.data.get("stock").toString().toInt(),
-                        document.data.get("harga").toString().toInt(),0,document.data.get("rating").toString().toDouble())
-                    artoko.add(data)
-                    Log.d("nama", data.toString())
+                        var data =DataToko(document.id, document.data.get("stock").toString().toInt(),
+                            document.data.get("harga").toString().toInt(),0,document.data.get("rating").toString().toDouble())
+                        artoko.add(data)
+                        Log.d("nama", data.toString())
+                    }
                 }
 
                 namatoko=datanama.toTypedArray()

@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 
@@ -15,12 +16,13 @@ class editprofile : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_editprofile)
         val db = Firebase.firestore
-        val ENama= findViewById<EditText>(R.id.GNama)
+        val ENama= findViewById<TextView>(R.id.GNama)
         val EPass= findViewById<EditText>(R.id.GPassword)
         val EChange= findViewById<Button>(R.id.Change)
         val sharedPref =  getSharedPreferences("LogIn", Context.MODE_PRIVATE)
         val text = sharedPref.getString("usernameP", "")
         var transaction= ArrayList<Long>()
+        ENama.setText(text)
         Log.d("Self",text.toString())
         EChange.setOnClickListener {
             if (ENama.text.toString()==text){

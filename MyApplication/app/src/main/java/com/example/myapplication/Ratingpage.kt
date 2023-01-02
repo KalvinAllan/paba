@@ -32,6 +32,7 @@ class Ratingpage : AppCompatActivity() {
         var value =ArrayList<Long>()
         var transaksis=ArrayList<Long>()
         var stockOrder=0
+        var owner=text
         val db = Firebase.firestore
         val text3=intent.getStringExtra("namatoko")
         var count=0
@@ -111,7 +112,7 @@ class Ratingpage : AppCompatActivity() {
                                         ratings=count2/itung
                                         Log.d("LOLSL", count.toString())
                                         Log.d("LOLSL", ratings.toString())
-                                        val dataI=DataSeller(namaS,passS,ratings,stocks,hargas,transaksis, stockOrder)
+                                        val dataI=DataSeller(namaS,passS,ratings,stocks,hargas,transaksis, stockOrder,owner.toString())
                                         db.collection("Seller").document(text3.toString()).set(dataI)
                                         val intents = Intent(this@Ratingpage, Home::class.java)
                                         startActivity(intents)

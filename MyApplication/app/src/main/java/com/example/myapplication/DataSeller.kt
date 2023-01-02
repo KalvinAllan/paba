@@ -7,6 +7,6 @@ data class DataSeller(
     var stock: Int,
     var harga:Int,
     var Transaksi:ArrayList<Long>,
-    var stockOrder: Int
-
+    var stockOrder: Int,
+    var Owner: String
 )

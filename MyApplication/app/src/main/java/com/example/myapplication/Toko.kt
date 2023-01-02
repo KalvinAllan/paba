@@ -31,6 +31,9 @@ class Toko : AppCompatActivity() {
         val  rating = findViewById<TextView>(R.id.textView2)
         val db = Firebase.firestore
         val retrieveData = db.collection("Seller")
+        val sharedPref2 =  getSharedPreferences("LogIn", Context.MODE_PRIVATE)
+        val text2 = sharedPref2.getString("usernameP", "")
+        var owner=text2
         nama.setText(text)
         if(text != null){
             db.collection("Seller")
@@ -61,7 +64,7 @@ class Toko : AppCompatActivity() {
                                 Log.d("Test", h2.toString())
                                 Log.d("Test", h1.toString())
                                 val dataInput =
-                                    DataSeller(text.toString(), textpass.toString(), 0.0, h2, h1,Alist,0)
+                                    DataSeller(text.toString(), textpass.toString(), 0.0, h2, h1,Alist,0,owner.toString())
                                 db.collection("Seller").document(text.toString()).set(dataInput)
                                 val intents = Intent(this@Toko, MainActivity2::class.java)
                                 startActivity(intents)

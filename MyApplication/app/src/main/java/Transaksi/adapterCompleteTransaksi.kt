@@ -77,7 +77,8 @@ class adapterCompleteTransaksi (
                                 resSeller.data?.get("stock").toString().toInt(),
                                 resSeller.data?.get("harga").toString().toInt(),
                                 resSeller.data?.get("transaksi") as ArrayList<Long>,
-                                CurStockOrder)
+                                CurStockOrder,
+                                resSeller.data!!.get("owner").toString())
                             db.collection("Seller").document(resSeller.id).set(datas)
                             val data = transaksiid(
                                 result.id.toInt(),
